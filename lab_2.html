@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Hello World!</title>
+        <script language="javascript" src="shapes.js"></script>
+        <script language="javascript">
+            function loadPage() {
+                try {
+                    document.write("<pre>");
+
+                    circle = new Circle(3, 3, 5);
+                    circle1 = new Circle(3, 3, 5);
+                    rect = new Rectangle(4, 5, 6, 7);
+
+                    composite = new Composite();
+
+                    composite.push(circle);
+                    composite.push(circle1);
+
+                    composite1 = new Composite();
+
+                    composite1.push(composite);
+                    composite1.push(rect);
+
+                    document.write("\n\n\n");
+                    document.write(composite1);
+                    composite1.move(10, 10);
+                    document.write("\n\n\n");
+                    document.write(composite1);
+                    composite1.move(-10, -10);
+                    document.write("\n\n\n");
+
+                    document.write(composite1);
+
+                    document.write("</pre>");
+                } catch (e) {
+                    document.write("Exception: " + e);
+                }
+            }
+
+        </script>
+    </head>
+
+    <body onload="loadPage()">
+
+    </body>
+</html>
